@@ -3,6 +3,7 @@ import Api from '../../api';
 import Board from './components/Board';
 import Panel from './components/Panel';
 import { ContainerStyled } from './style';
+import { Helmet } from 'react-helmet';
 
 function Main() {
     const [data, setData] = useState({})
@@ -25,6 +26,11 @@ function Main() {
 
     return (
         <ContainerStyled>
+            <div>
+                <Helmet>
+                    <title>COVID-19 Tracker</title>
+                </Helmet>
+            </div>
             <div className="mb-2">
                 <Panel
                     data={data}
