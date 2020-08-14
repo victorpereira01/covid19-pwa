@@ -30,7 +30,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
         navigator.share({
             title: `Dados do Covid19 - ${country}`,
             text: textCovid19,
-            url: ''
+            url: 'https://covid19-sigma-rouge.vercel.app/'
         })
     }
 
