@@ -20,6 +20,36 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
         </MenuItem>
     )
 
+    const textCovid19 = `País: ${country} - recuperados: ${recovered}`;
+
+    const copyInfo = () => {
+        navigator.clipboard.writeText(textCovid19);
+    }
+
+    const shareInfo = () => {
+        navigator.share({
+            title: `Dados do Covid19 - ${country}`,
+            text: textCovid19,
+            url: ''
+        })
+    }
+
+    const renderShareButton = (
+        <div>
+            <Button variant="contained" color="primary" onClick={shareInfo}>
+                Compartilhar
+            </Button>
+        </div>
+    )
+
+    const renderCopyButton = (
+        <div>
+            <Button variant="contained" color="primary" onClick={shareInfo}>
+                Copiar
+            </Button>
+        </div>
+    )
+
     return (
         <Card>
             <CardPanelContentStyled>
@@ -33,6 +63,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
                         </Select>
                     </div>
                 </div>
+                {navigatorHasShare ? renderShareButton : renderCopyButton}
             </CardPanelContentStyled>
         </Card>
     )
