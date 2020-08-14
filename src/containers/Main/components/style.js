@@ -12,7 +12,9 @@ export const ValueStyled = styled(Typography)`
 `
 
 export const CardContentStyled = styled(CardContent)`
-    border-left: 8px solid ${({ color }) => color || '#5d78ff'};`
+    border-left: 8px solid ${({ color }) => color || '#5d78ff'}
+`
+
 export const CardPanelContentStyled = styled(CardContent)`
     display: flex;
     justify-content: space-between;
