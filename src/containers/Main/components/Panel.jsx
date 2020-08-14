@@ -1,5 +1,4 @@
 import React, { memo } from 'react';
-import RefreshIcon from '../../../assets/images/refresh.svg';
 import { Card, Typography, Button, Select, MenuItem } from '../../../components';
 import COUNTRIES from '../../../commons/constants/countries';
 import { CardPanelContentStyled, ItemStyled } from './style';
@@ -44,7 +43,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData }) {
 
     const renderCopyButton = (
         <div>
-            <Button variant="contained" color="primary" onClick={shareInfo}>
+            <Button variant="contained" color="primary" onClick={copyInfo}>
                 Copiar
             </Button>
         </div>
